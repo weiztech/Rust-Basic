@@ -1,0 +1,7 @@
+[
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Cargo Run"
+  }
+]
