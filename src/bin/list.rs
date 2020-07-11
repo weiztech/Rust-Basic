@@ -3,6 +3,12 @@
 fn main() {
     // Array
     let x = [1, 2, 3, 4, 5];
+    // Find Index from array value
+    println!(
+        "5 index is {:?}",
+        x.iter().position(|val| val == &5).unwrap()
+    );
+
     println!("{:?} {}", x.iter().sum::<i8>(), x.len());
     // initialize 500 element of array with value 5
     let ys: [i32; 500] = [5; 500];

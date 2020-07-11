@@ -114,4 +114,22 @@ fn main() {
 
     // test_loop();
     // while_loop();
+
+    // Result
+    let o: Result<i8, &String> = Ok(8);
+    let e: Result<i8, &str> = Err("message");
+
+    println!("Result OK {:?} {:?} {:?}", o, o.ok(), o.err());
+    println!("Result ERR {:?} {:?} {:?}", e, e.ok(), e.err());
+
+    assert_eq!(o.ok(), Some(8)); // Ok(v) ok = Some(v)
+    assert_eq!(e.ok(), None); // Err(v) ok = None
+
+    assert_eq!(o.err(), None); // Ok(v) err = None
+    assert_eq!(e.err(), Some("message")); // Err(v) err = Some(v)
+
+    // Option
+    let x: Option<&str> = Some("Hello, world!");
+    assert_eq!(x.is_some(), true);
+    assert_eq!(x.is_none(), false);
 }
