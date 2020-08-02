@@ -1,5 +1,10 @@
-// Rust List: Array, Tuple, Range, Vec
+enum Thing {
+    String(String),
+    Number(i32),
+    Bool(bool),
+}
 
+// Rust List: Array, Tuple, Range, Vec
 fn main() {
     // Array
     let x = [1, 2, 3, 4, 5];
@@ -62,4 +67,10 @@ fn main() {
     for data in range.step_by(2).enumerate() {
         println!("{:?}", data);
     }
+
+    // Vec
+    let AData = [1, 2, 3];
+    let BData = [1, 2, 3];
+    let vec: Vec<u32> = vec![1, 2, 3];
+    println!("Vec {:?}", vec)
 }
