@@ -71,7 +71,15 @@ fn main() {
     // Vec
     let nums: Vec<u32> = vec![1, 2, 3];
     println!("Vec {:?}", nums);
-    for num in nums {
+    for num in &nums {
         println!("Vec value: {}", num);
     }
+    println!("Vec {:?}", nums);
+
+    // Vec - mutable Dereference
+    let mut v = vec![100, 32, 57];
+    for i in &mut v {
+        *i += 50;
+    }
+    println!("V {:?}", v);
 }
