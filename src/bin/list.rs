@@ -26,13 +26,13 @@ fn main() {
     // Loop
     // Loop - Array
     for data in &x {
-        println!("{:?}", data);
+        println!("Basic Loop Array {:?}", data);
     }
     for data in x.iter().enumerate() {
-        println!("{:?}", data);
+        println!("Enumerate Array {:?}", data);
     }
     // Loop - Slicing
-    for data in slice.iter() {
+    for data in slice {
         println!("Loop Slice {}", data);
     }
     // Destruct
@@ -65,12 +65,13 @@ fn main() {
     let sum = range.clone().sum::<i8>();
     println!("{}", sum);
     for data in range.step_by(2).enumerate() {
-        println!("{:?}", data);
+        println!("Range {:?}", data);
     }
 
     // Vec
-    let AData = [1, 2, 3];
-    let BData = [1, 2, 3];
-    let vec: Vec<u32> = vec![1, 2, 3];
-    println!("Vec {:?}", vec)
+    let nums: Vec<u32> = vec![1, 2, 3];
+    println!("Vec {:?}", nums);
+    for num in nums {
+        println!("Vec value: {}", num);
+    }
 }

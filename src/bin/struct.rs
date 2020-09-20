@@ -22,12 +22,12 @@ impl Planet {
 }
 
 trait Printer {
-    fn show_name(&self) -> String;
+    fn show_name(&self) -> &String;
 }
 
 impl Printer for Planet {
-    fn show_name(&self) -> String {
-        self.name.to_string()
+    fn show_name(&self) -> &String {
+        &self.name
     }
 }
 
@@ -48,7 +48,11 @@ fn main() {
     println!("Planet {} , Size {}", earth.show_name(), earth.size);
 
     earth.change_size(10);
-    println!("Size Changes to {}", earth.size);
+    println!(
+        "Planet {} size Changes to {},",
+        earth.show_name(),
+        earth.size
+    );
 
     let pluto = Planet::create_pluto(5);
     println!(
