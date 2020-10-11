@@ -7,6 +7,12 @@ enum Thing {
 // Rust List: Array, Tuple, Range, Vec
 fn main() {
     // Array
+    let mut data = ['a', 'b', 'c', 'd', 'e'];
+    for i in &mut data {
+        *i = 'c';
+    }
+    data[1] = 'x';
+    println!("{:?}", data);
     let x = [1, 2, 3, 4, 5];
     // Find Index from array value
     println!(

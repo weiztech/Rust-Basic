@@ -28,18 +28,20 @@ impl CoffeMachine {
         }
     }
 
-    fn create_order(&self, money: f32, selected_coffee: usize) {
+    fn create_order(&self, money: f32, selected_coffee: usize) -> Vec<(&str, usize)> {
         let coffee_price: f32 = self.coffees[selected_coffee];
         let return_amount = money - coffee_price;
         let returns = self.get_return_money(return_amount);
+        println!("{}", return_amount);
 
-        println!(
+        /*println!(
             "\n\n\nCoffe Price: {}\nYour Money: {}\nReturn Amount: {}\nReturn Money: {:?}",
             coffee_price, money, return_amount, returns
-        )
+        );*/
+        returns
     }
 
-    fn get_return_money(&self, return_amount: f32) -> Vec<(&'static str, usize)> {
+    fn get_return_money(&self, return_amount: f32) -> Vec<(&str, usize)> {
         let mut return_money: Vec<(&'static str, usize)> = Vec::new();
         let mut amount: f32 = return_amount;
         for coin in self.coins.iter() {
@@ -55,7 +57,7 @@ impl CoffeMachine {
 
 fn main() {
     let machine = CoffeMachine::create_new(Some(vec![3.14, 6.2]));
-    machine.create_order(55.55, 0);
+    println!("{:?}", machine.create_order(55.55, 0));
     /*
         Output:
 
