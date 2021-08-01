@@ -47,6 +47,10 @@ fn test_loop() {
     println!("Correct answers");
 }
 
+fn sum(x: i64, y: String) -> (i64, String) {
+    (x, y)
+}
+
 fn while_loop() {
     let mut language = String::new();
 
@@ -64,6 +68,9 @@ fn while_loop() {
 }
 
 fn main() {
+    let val = sum(1, "123123".to_string());
+    println!("Hellox {:?}, idx 0: {}, idx 1: {}", val, val.0, val.1);
+    /*
     let name = "Yihaa";
     let big_name = format!("Emperor {name}", name = name);
     let maxx = format!("{a} {c} {b}", a = "a", b = 'b', c = 3);
@@ -132,4 +139,5 @@ fn main() {
     let x: Option<&str> = Some("Hello, world!");
     assert_eq!(x.is_some(), true);
     assert_eq!(x.is_none(), false);
+    */
 }
