@@ -30,5 +30,5 @@ fn main() {
         println!("{}", f.x);
     };
     // Print will trigger Error due to `n` out of scope/dropped
-    println!("{}", f.x);
+    // println!("{}", f.x);
 }
