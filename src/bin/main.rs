@@ -3,7 +3,7 @@ mod libs;
 use libs::sum_return;
 #[path = "../extend_traits.rs"]
 mod extend_traits;
-use extend_traits::{Brightness, Light, MyLight, OnOff};
+use extend_traits::{Light, MyLight};
 
 fn main() {
     let x = 5;
